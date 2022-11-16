@@ -11,6 +11,8 @@
   "person_name",
   "phone",
   "email",
+  "booking_agent",
+  "sales_contract",
   "column_break_13",
   "your_sales_rep_is",
   "your_doc_rep_is",
@@ -126,15 +128,6 @@
    "fieldtype": "Link",
    "label": "Port of Discharge",
    "options": "Port Details"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Booking Details",
-   "print_hide": 1,
-   "read_only": 1
   },
   {
    "fieldname": "column_break_5",
@@ -371,12 +364,33 @@
   {
    "fieldname": "column_break_42",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "booking_agent",
+   "fieldtype": "Link",
+   "label": "Booking Agent",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Booking Details",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "sales_contract",
+   "fieldtype": "Link",
+   "label": "Sales Contract",
+   "options": "Sales Contract"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-08-20 13:43:19.981501",
+ "modified": "2022-09-30 11:13:27.285762",
  "modified_by": "Administrator",
  "module": "Kirby",
  "name": "Booking Details",
