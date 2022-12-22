@@ -5,4 +5,14 @@ frappe.ui.form.on('Booking Details', {
 	// refresh: function(frm) {
 
 	// }
+	setup: function (frm) {
+        frm.set_query('booking_agent', function (doc) {
+            return {
+                filters: {
+                    'supplier_group': "Shipping"
+                }
+            };
+        });
+    }
 });
+
