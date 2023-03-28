@@ -8,7 +8,6 @@
  "engine": "InnoDB",
  "field_order": [
   "comodity",
-  "comodity_name",
   "comodity_items_section",
   "items"
  ],
@@ -16,16 +15,8 @@
   {
    "fieldname": "comodity",
    "fieldtype": "Data",
-   "hidden": 1,
    "label": "Comodity",
    "unique": 1
-  },
-  {
-   "fieldname": "comodity_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Comodity Name",
-   "reqd": 1
   },
   {
    "fieldname": "comodity_items_section",
@@ -41,7 +32,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-08-25 04:25:26.345194",
+ "modified": "2022-12-24 00:50:09.131251",
  "modified_by": "Administrator",
  "module": "Kirby",
  "name": "Comodity",

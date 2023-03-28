@@ -25,6 +25,8 @@
   "total_net_weight",
   "container_image_section",
   "images",
+  "container_location_section",
+  "location",
   "amended_from"
  ],
  "fields": [
@@ -44,8 +46,7 @@
    "fieldname": "seal_number",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Seal Number",
-   "reqd": 1
+   "label": "Seal Number"
   },
   {
    "fieldname": "booking_number",
@@ -76,7 +77,7 @@
   },
   {
    "fieldname": "total_pallet_tare",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Total Pallet Tare"
   },
   {
@@ -85,7 +86,7 @@
   },
   {
    "fieldname": "total_weight",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Total Weight"
   },
   {
@@ -94,6 +95,7 @@
    "label": "Container Image"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "images",
    "fieldtype": "Table",
    "label": "Images",
@@ -101,7 +103,7 @@
   },
   {
    "fieldname": "total_net_weight",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Total Net Weight"
   },
   {
@@ -121,9 +123,20 @@
   },
   {
    "fieldname": "container_size",
-   "fieldtype": "Select",
-   "label": "Container Size",
-   "options": "\n20 X 45\n35 X 50"
+   "fieldtype": "Data",
+   "label": "Container Size"
+  },
+  {
+   "fieldname": "container_location_section",
+   "fieldtype": "Section Break",
+   "label": "container Location"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "location",
+   "fieldtype": "Table",
+   "label": "Location",
+   "options": "Container Location"
   },
   {
    "fieldname": "amended_from",
@@ -138,13 +151,14 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-12-01 01:12:47.794422",
+ "modified": "2023-02-16 10:34:49.669106",
  "modified_by": "Administrator",
  "module": "Kirby",
  "name": "Container",
  "owner": "Administrator",
  "permissions": [
   {
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -154,6 +168,7 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

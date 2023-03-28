@@ -13,7 +13,9 @@
   "column_break_5",
   "rate",
   "amount",
-  "uom"
+  "uom",
+  "comodity_type",
+  "comodity_rate"
  ],
  "fields": [
   {
@@ -69,12 +71,25 @@
   {
    "fieldname": "column_break_5",
    "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "item_code.comodity_type",
+   "fieldname": "comodity_type",
+   "fieldtype": "Data",
+   "label": "Comodity Type"
+  },
+  {
+   "fieldname": "comodity_rate",
+   "fieldtype": "Int",
+   "label": "Comodity Rate",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2022-08-07 10:33:08.511247",
+ "modified": "2023-03-14 13:16:15.148794",
  "modified_by": "Administrator",
  "module": "Kirby",
  "name": "Sales Contract Items",

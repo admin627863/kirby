@@ -52,7 +52,7 @@
    "label": "Shipper Name"
   },
   {
-   "fetch_from": "booking_number.person_name",
+   "fetch_from": "booking_number.full_name",
    "fieldname": "person_name",
    "fieldtype": "Data",
    "label": "Person Name"
@@ -177,7 +177,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-10-18 10:49:03.276880",
+ "modified": "2023-03-16 14:16:46.874534",
  "modified_by": "Administrator",
  "module": "Kirby",
  "name": "Bill of Lading",

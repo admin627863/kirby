@@ -11,6 +11,7 @@
   "customer",
   "column_break_3",
   "supplier",
+  "date",
   "primary_address_and_contact_detail_section",
   "customer_primary_contact",
   "mobile_no",
@@ -51,11 +52,11 @@
    "fieldtype": "Column Break"
   },
   {
-   "default": "Bestway Metal Recycling LLP",
    "fieldname": "supplier",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Supplier",
+   "options": "Company",
    "reqd": 1
   },
   {
@@ -94,25 +95,22 @@
    "label": "Primary Address"
   },
   {
-   "default": "Mr. Nafis N Ajmeri",
    "fieldname": "supplier_primary_contact",
-   "fieldtype": "Data",
-   "label": "Supplier Primary Contact"
+   "fieldtype": "Link",
+   "label": "Supplier Primary Contact",
+   "options": "Address"
   },
   {
-   "default": "+91 8000851234",
    "fieldname": "supplier_mobile_no",
    "fieldtype": "Data",
    "label": "Supplier Mobile No"
   },
   {
-   "default": "najmeri@bestwaymetalrecycling.com",
    "fieldname": "supplier_email_id",
    "fieldtype": "Data",
    "label": "Supplier Email Id"
   },
   {
-   "default": "66, Krishna Industrial Park,GIDC Kathwada,Ahmedabad 382430,Gujarat,INDIA\n",
    "fieldname": "supplier_primary_address",
    "fieldtype": "Data",
    "label": "Supplier Primary Address"
@@ -173,12 +171,18 @@
    "options": "Sales Contract",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-08-13 05:37:19.400486",
+ "modified": "2023-02-16 12:19:49.284688",
  "modified_by": "Administrator",
  "module": "Kirby",
  "name": "Sales Contract",
@@ -194,6 +198,7 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

@@ -7,12 +7,18 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "company",
   "person_name",
+  "full_name",
   "phone",
   "email",
-  "booking_agent",
+  "column_break_131",
+  "company",
   "sales_contract",
+  "booking_agent_section",
+  "booking_agent",
+  "sales_rep",
+  "doc_rep",
+  "billing_rep",
   "column_break_13",
   "your_sales_rep_is",
   "your_doc_rep_is",
@@ -385,12 +391,46 @@
    "fieldtype": "Link",
    "label": "Sales Contract",
    "options": "Sales Contract"
+  },
+  {
+   "fetch_from": "person_name.employee_name",
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "booking_agent_section",
+   "fieldtype": "Section Break",
+   "label": "Booking Agent"
+  },
+  {
+   "fieldname": "column_break_131",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sales_rep",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Sales Rep"
+  },
+  {
+   "fieldname": "doc_rep",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Doc Rep"
+  },
+  {
+   "fieldname": "billing_rep",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Billing Rep"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-09-30 11:13:27.285762",
+ "modified": "2023-03-16 14:04:34.348898",
  "modified_by": "Administrator",
  "module": "Kirby",
  "name": "Booking Details",

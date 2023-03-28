@@ -1,14 +1,13 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:carrier",
+ "autoname": "field:carrier_name",
  "creation": "2022-08-12 15:56:43.271020",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "carrier_name",
-  "carrier"
+  "carrier_name"
  ],
  "fields": [
   {
@@ -18,18 +17,11 @@
    "label": "Carrier Name",
    "reqd": 1,
    "unique": 1
-  },
-  {
-   "fieldname": "carrier",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Carrier",
-   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-08-12 16:01:36.352214",
+ "modified": "2022-12-22 02:34:48.520319",
  "modified_by": "Administrator",
  "module": "Kirby",
  "name": "Carrier",

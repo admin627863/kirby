@@ -45,6 +45,93 @@ frappe.ui.form.on("Sales Contract", {
     } 
 });
 
+frappe.ui.form.on('Sales Contract Items', {
+	item_code: function(frm, cdt, cdn){
+	    var d = locals[cdt][cdn];
+        frappe.call({
+				method: "frappe.client.get_list",
+				args: {
+					doctype: "Item Price",
+					fields: ['price_list_rate'],
+					filters: [["item_code", "=", d.item_code]]
+				},
+				async: false,
+				callback: function(r) {
+				    console.log(r);
+			        frappe.model.set_value(d.doctype, d.name, 'rate', r.message[0].price_list_rate);
+			        frappe.model.set_value(d.doctype, d.name, 'amount', r.message[0].price_list_rate);
+				}
+			});
+	},
+	quantity: function(frm, cdt, cdn){
+	    var d = locals[cdt][cdn];
+        frappe.model.set_value(d.doctype, d.name, 'amount', d.rate * d.quantity);
+	},
+	
+	rate: function(frm, cdt, cdn){
+	    var d = locals[cdt][cdn];
+        frappe.model.set_value(d.doctype, d.name, 'amount', d.rate * d.quantity);
+	},
+	
+	
+});
+
+
+frappe.ui.form.on('Sales Contract Items', {
+	item_code: function(frm, cdt, cdn){
+	    var d = locals[cdt][cdn];
+        frappe.call({
+				method: "frappe.client.get_list",
+				args: {
+					doctype: "Comodity item",
+					fields: ['amount'],
+					filters: [["parent", "=", d.comodity_type]],
+					parent: "Comodity",
+					limit_page_length: 1000
+				},
+				async: false,
+				callback: function(r) {
+				    console.log(r.message);
+			        frappe.model.set_value(d.doctype, d.name, 'comodity_rate', r.message[0].amount);
+				}
+			});
+	}
+});
+
+// //Comodity Type Wise Rate get in comodity doctype
+// frappe.ui.form.on('Sales Contract Items', {
+// 	item_code: function(frm, cdt, cdn){
+// 	    var d = locals[cdt][cdn];
+//         frappe.call({
+// 				method: "frappe.client.get_list",
+// 				args: {
+// 					doctype: "Comodity item",
+// 					fields: ['amount'],
+// 					filters: [["parent", "=", d.comodity_type]],
+// 					parent: "Comodity",
+// 					limit_page_length: 1000
+// 				},
+// 				async: false,
+// 				callback: function(r) {
+// 				    console.log(r.message);
+// 			        frappe.model.set_value(d.doctype, d.name, 'rate', r.message[0].amount);
+// 			        frappe.model.set_value(d.doctype, d.name, 'amount', r.message[0].amount);
+// 				}
+// 			});
+// 	},
+	
+// 	quantity: function(frm, cdt, cdn){
+// 	    var d = locals[cdt][cdn];
+//         frappe.model.set_value(d.doctype, d.name, 'amount', d.rate * d.quantity);
+// 	},
+	
+// 	rate: function(frm, cdt, cdn){
+// 	    var d = locals[cdt][cdn];
+//         frappe.model.set_value(d.doctype, d.name, 'amount', d.rate * d.quantity);
+// 	},
+	
+// });
+
 
 // frappe.ui.form.on("Sales Contract", "supplier", function(frm) {
 //     if(cur_frm.doc.supplier){
